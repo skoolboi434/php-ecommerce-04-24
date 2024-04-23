@@ -1,6 +1,7 @@
 <?php
 
-$router->get('/', 'controllers/home.php');
-$router->get('/products', 'controllers/products/index.php');
-$router->get('/product', 'controllers/products/show.php');
-$router->get('/products/create', 'controllers/products/create.php');
+$router->get('/', 'HomeController@index');
+$router->get('/products', 'ProductController@index');
+$router->get('/products/create', 'ProductController@create');
+$router->get('/product/{id}', 'ProductController@show');
+$router->get('/products/brands/{brand}', 'ProductController@brands');

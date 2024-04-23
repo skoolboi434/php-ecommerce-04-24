@@ -1,17 +1,19 @@
-<?= loadPartial("header"); ?>
+<?php loadPartial('header'); ?>
+<?php loadPartial('hero'); ?>
 
-<section class="featured-products">
-  <div class="container">
+
+<div class="container">
+  <section class="featured-products">
     <div class="heading-container my-5">
-      <h3>All Products</h3>
+      <h3>Featured Products</h3>
     </div>
 
     <div class="row">
       <?php foreach ($products as $product): ?>
-      <div class="col-md-3">
+      <div class="col-md-3 mb-3">
         <div class="product-card">
           <div class="img-container mb-3">
-            <a href="/product?id=<?= $product->id ?>">
+            <a href="/product/<?= $product->id ?>">
               <img src="../uploads/<?= $product->featured_image ?>"
                 class="img-fluid" alt="<?= $product->name ?>">
             </a>
@@ -34,6 +36,24 @@
       </div>
       <?php endforeach ?>
     </div>
-  </div>
-</section>
-<?= loadPartial("footer"); ?>
+  </section>
+
+  <section class="brands-container">
+    <div class="heading-containe my-5">
+      <h3>Brands</h3>
+    </div>
+    <div class="row">
+      <?php foreach ($brands as $brand): ?>
+      <div class="col-md-3 brand-card-container">
+        <a href="/products/brands/<?php echo $brand->brand; ?>"
+          class="brand-card">
+          <?php echo $brand->brand; ?>
+        </a>
+      </div>
+      <?php endforeach ?>
+    </div>
+  </section>
+
+</div>
+
+<?php loadPartial('footer'); ?>
