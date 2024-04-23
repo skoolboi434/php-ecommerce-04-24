@@ -1,3 +1,1 @@
-<?php
-
-echo 'Products';
+<?php loadView('products/index');
