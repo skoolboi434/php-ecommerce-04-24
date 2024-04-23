@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use Framework\Database;
 
+use Traits\BrandTrait;
+
 use PDO;
 
 class HomeController {
@@ -14,10 +16,12 @@ class HomeController {
     $this->db = new Database($config);
   }
 
+  use BrandTrait;
+
   public function index() {
     $products = $this->db->query('SELECT * FROM products LIMIT 8')->fetchAll();
 
-    $brands = $this->db->query("SELECT DISTINCT brand FROM products")->fetchAll(PDO::FETCH_OBJ);
+    $brands = $this->getUniqueBrands($this->db);
 
     loadView('home', [
       'products' => $products,

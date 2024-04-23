@@ -1,8 +1,10 @@
 <?= loadPartial("header"); ?>
 
+
 <section class="brands-container">
 
   <div class="container">
+    <?= loadPartial('message'); ?>
     <div class="heading-container my-5">
       <h3>Brands</h3>
     </div>
@@ -27,10 +29,10 @@
 
     <div class="row">
       <?php foreach ($products as $product): ?>
-      <div class="col-md-3">
+      <div class="col-md-3 mb-3">
         <div class="product-card">
           <div class="img-container mb-3">
-            <a href="/product/<?= $product->id ?>">
+            <a href="/products/<?= $product->id ?>">
               <img src="../uploads/<?= $product->featured_image ?>"
                 class="img-fluid" alt="<?= $product->name ?>">
             </a>

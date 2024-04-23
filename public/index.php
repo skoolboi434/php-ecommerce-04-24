@@ -3,7 +3,9 @@ require __DIR__ . '/../vendor/autoload.php';
 require '../helpers.php';
 
 use Framework\Router;
+use Framework\Session;
 
+Session::start();
 
 // Instantiating the router
 $router = new Router();

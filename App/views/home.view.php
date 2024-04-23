@@ -3,6 +3,7 @@
 
 
 <div class="container">
+  <?= loadPartial('message'); ?>
   <section class="featured-products">
     <div class="heading-container my-5">
       <h3>Featured Products</h3>
@@ -13,7 +14,7 @@
       <div class="col-md-3 mb-3">
         <div class="product-card">
           <div class="img-container mb-3">
-            <a href="/product/<?= $product->id ?>">
+            <a href="/products/<?= $product->id ?>">
               <img src="../uploads/<?= $product->featured_image ?>"
                 class="img-fluid" alt="<?= $product->name ?>">
             </a>
