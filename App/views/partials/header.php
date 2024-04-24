@@ -55,6 +55,20 @@
             <a class="nav-link" aria-current="page" href="/auth/login">Login</a>
           </li>
           <?php endif; ?>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/cart">
+              <i class="fa fa-solid fa-basket-shopping"></i> Cart
+              <?php 
+              if(isset($_SESSION['cart'])) {
+                $count = count($_SESSION['cart']);
+                echo "<span id=\"cart_count\">$count</span>";
+              } else {
+                echo "<span id=\"cart_count\">0</span>";
+              }
+              ?>
+            </a>
+
+          </li>
         </ul>
       </div>
     </div>
