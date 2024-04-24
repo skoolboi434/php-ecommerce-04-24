@@ -7,6 +7,8 @@ use Framework\Validation;
 
 use Traits\BrandTrait;
 
+use Traits\Searchable;
+
 use PDO;
 
 class ProductController {
@@ -372,6 +374,26 @@ class ProductController {
 
     }
 
+  }
 
+  /**
+   * Search for products
+   */
+
+  use Searchable;
+
+  public function performSearch($keyword)
+  {
+    if (isset($_POST['search'])) {
+      $keyword = $_POST['keyword'];
+      // Perform the search using the search method from the Searchable trait
+      $results = $this->search($keyword);
+      // Pass the search results to the view
+
+      loadView('/products/search', ['results' => $results]);
+    } else {
+      // Handle other requests (e.g., displaying the search form)
+      loadView('search_form');
+    }
   }
 }

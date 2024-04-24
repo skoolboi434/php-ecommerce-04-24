@@ -5,3 +5,16 @@
 // Components
 
 @import 'components/__components';
+
+// Components
+
+@import 'pages/__pages';
+
+body {
+  //background-color: $offwhite;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style: none;
+}

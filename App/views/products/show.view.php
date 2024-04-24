@@ -1,6 +1,8 @@
 <?= loadPartial("header"); ?>
+<?php use Framework\Session; ?>
 <div class="product-details container my-5">
   <?php loadPartial("message"); ?>
+  <?php if(Session::has('user')) : ?>
   <div class="btn-container mb-5 d-flex justify-content-end">
     <a href="/products/edit/<?= $product->id ?>"
       class="btn btn-primary d-block me-2">Edit</a>
@@ -9,6 +11,7 @@
       <button type="submit" class="btn btn-danger">Delete</button>
     </form>
   </div>
+  <?php endif; ?>
   <form action="/cart" method="POST">
     <div class="row">
       <div class="col-md-6">

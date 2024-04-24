@@ -62,4 +62,16 @@
 .product-card .product-info .product-title {
   font-size: 14px;
   min-height: 65px;
+}
+
+.product-details .img-container img {
+  width: 50%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style: none;
 }/*# sourceMappingURL=custom.css.map */
